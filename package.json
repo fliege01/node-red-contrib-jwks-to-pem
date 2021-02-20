@@ -1,0 +1,31 @@
+{
+  "name": "node-red-contrib-jwks-to-pem",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "node-red": {
+    "nodes": {
+      "jwks-to-pem": "jwks-to-pem.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.livespawn.de/fliege01/node-red-contrib-jwks-to-pem"
+  },
+  "keywords": [],
+  "author": "Nico Bischof",
+  "license": "MIT",
+  "dependencies": {
+    "node-jwk": "^0.1.0"
+  },
+  "devDependencies": {
+    "mocha": "^8.3.0",
+    "node-red": "^1.2.9",
+    "node-red-node-test-helper": "^0.2.7",
+    "request": "^2.88.2",
+    "should": "^13.2.3"
+  }
+}

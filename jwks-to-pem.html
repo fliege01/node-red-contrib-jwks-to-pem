@@ -1,0 +1,42 @@
+<script type="text/javascript">
+    RED.nodes.registerType('jwks-to-pem', {
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value: ""}
+        },
+        inputs: 1,
+        outputs: 0,
+        icon: "function.svg",
+        label: function () {
+            return this.name || "jwks-to-pem";
+        }
+    });
+</script>
+
+
+<script type="text/html" data-template-name="jwks-to-pem">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="jwks-to-pem">
+    <p>This module pulls an JWK JSON-Object from <b>msg.jwkurl</b> and convert it into an representative JS Object.
+    </p>
+
+    <p>Example:</p>
+    <pre><code class="language-js">
+msg.payload = {
+    keys: {
+        'key-id':   '-----BEGIN PUBLIC KEY-----\n' +
+                    'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAk7V9nJALlyBxbU2Tq5j6\n' +
+                    'eyRBHXckLAn5w2QmV9KR90bBCNqGks+aSRHG7AKrWwb1lyFAb2WuA63Me/uZY9Lb\n' +
+                    '-----END PUBLIC KEY-----',
+        [...]
+    }
+}
+</code></pre>
+
+</script>
