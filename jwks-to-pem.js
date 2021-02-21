@@ -27,6 +27,8 @@ module.exports = function (RED) {
         let node = this;
 
         node.on('input', async function (msg, send, done) {
+            this.status({fill:"blue",shape:"dot",text:"loading"});
+
             let jwksUrl = msg['jwkurl'] || false;
             if (!jwksUrl) done(new Error('jwkurl is not defined'));
 
@@ -37,8 +39,10 @@ module.exports = function (RED) {
                     decodedKeys[key.kid] = key.key.toPublicKeyPEM()
                 }
                 msg.payload = {keys: decodedKeys};
+                this.status({});
                 send(msg);
             } catch (e) {
+                this.status({fill:"red",shape:"ring",text:"Error"});
                 done(e);
             }
 
