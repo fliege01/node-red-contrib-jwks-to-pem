@@ -26,7 +26,7 @@ describe('jwks-to-pem Node', function () {
         });
     });
 
-    it('should make payload lower case', function (done) {
+    it('should have response property payload', function (done) {
         this.timeout(5000);
         let flow = [{id: "n1", type: "jwks-to-pem", name: "jwks-to-pem", wires: [["n2"]]}, {id: "n2", type: "helper"}];
         helper.load(jwks2pem_node, flow, function () {
