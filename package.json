@@ -27,5 +27,8 @@
     "node-red-node-test-helper": "^0.2.7",
     "request": "^2.88.2",
     "should": "^13.2.3"
+  },
+  "engines": {
+    "node": ">=14"
   }
 }
